@@ -40,3 +40,37 @@ document.addEventListener('DOMContentLoaded', () => {
         renderMatrix(result.matrix, password1, password2);
     });
 }); 
+
+function sequenceAlignment(str1, str2, matchScore, mismatchScore, gapPenalty) {
+    const m = str1.length;
+    const n = str2.length;
+    
+    // Inicialização da matriz de memoization
+    const dp = Array(m + 1).fill().map(() => Array(n + 1).fill(0));
+    
+    // Inicialização da primeira linha e coluna com penalidades de gap
+    for (let i = 0; i <= m; i++) dp[i][0] = i * gapPenalty;
+    for (let j = 0; j <= n; j++) dp[0][j] = j * gapPenalty;
+    
+    // Preenchimento da matriz usando programação dinâmica
+    for (let i = 1; i <= m; i++) {
+        for (let j = 1; j <= n; j++) {
+            const match = dp[i-1][j-1] + (str1[i-1] === str2[j-1] ? matchScore : mismatchScore);
+            const delete_op = dp[i-1][j] + gapPenalty;
+            const insert_op = dp[i][j-1] + gapPenalty;
+            
+            dp[i][j] = Math.max(match, Math.max(delete_op, insert_op));
+        }
+    }
+    
+    // Calcula a pontuação de similaridade normalizada (0 a 100)
+    const maxPossibleScore = Math.max(m, n) * matchScore;
+    const normalizedScore = ((dp[m][n] + Math.abs(Math.min(0, dp[m][n]))) / maxPossibleScore) * 100;
+    
+    return {
+        score: normalizedScore,
+        matrix: dp,
+        str1Length: m,
+        str2Length: n
+    };
+}

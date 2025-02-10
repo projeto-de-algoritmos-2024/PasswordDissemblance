@@ -69,12 +69,12 @@ function evaluatePasswordStrength(similarity) {
 function renderMatrix(matrix, str1, str2) {
     const container = document.getElementById('matrixContent');
     container.innerHTML = '';
-    
+
     // Criar cabeçalho da matriz
     const header = document.createElement('div');
     header.className = 'flex';
     header.innerHTML = '<div class="w-8"></div>';
-    
+
     ['', ...str2].forEach(char => {
         const cell = document.createElement('div');
         cell.className = 'w-8 text-center font-bold';
@@ -82,18 +82,18 @@ function renderMatrix(matrix, str1, str2) {
         header.appendChild(cell);
     });
     container.appendChild(header);
-    
+
     // Criar linhas da matriz
     ['', ...str1].forEach((char, i) => {
         const row = document.createElement('div');
         row.className = 'flex';
-        
+
         // Adicionar caractere da primeira string
         const charCell = document.createElement('div');
         charCell.className = 'w-8 font-bold text-center';
         charCell.textContent = char || '-';
         row.appendChild(charCell);
-        
+
         // Adicionar valores da matriz
         matrix[i].forEach(value => {
             const cell = document.createElement('div');
@@ -101,7 +101,7 @@ function renderMatrix(matrix, str1, str2) {
             cell.textContent = value;
             row.appendChild(cell);
         });
-        
+
         container.appendChild(row);
     });
 }

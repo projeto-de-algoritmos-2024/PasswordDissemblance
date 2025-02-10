@@ -53,7 +53,7 @@ O **Password Dissemblance** é uma aplicação web desenvolvida para visualizaç
 
 ### Acesso à Aplicação
 
-Você pode acessar a aplicação pelo seguinte link: [Password Dissemblance](<!-- COLOCAR LINK -->)
+Você pode acessar a aplicação pelo seguinte link: [Password Dissemblance](https://password-dissemblance.pages.dev/)
 
 ### Instruções de Uso
 

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Dissemblance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-900 min-h-screen">
+    <div class="container mx-auto px-4 py-12">
+        <h1 class="text-4xl font-bold text-center mb-12 text-gray-100">Password Dissemblance</h1>
+
+        <div class="w-3/4 mx-auto bg-gray-800 rounded-xl shadow-lg p-8">
+            <div class="space-y-6">
+                <div class="grid grid-cols-3 gap-4 mb-6">
+                    <div>
+                        <label for="matchScore" class="block text-lg font-medium text-gray-200 mb-2">Match Score</label>
+                        <input type="number" id="matchScore" value="2"
+                            class="mt-1 block w-full text-lg rounded-md border-gray-600 shadow-sm focus:border-blue-600 focus:ring-blue-600 p-3 bg-gray-700 text-gray-100">
+                    </div>
+                    <div>
+                        <label for="mismatchScore" class="block text-lg font-medium text-gray-200 mb-2">Mismatch
+                            Score</label>
+                        <input type="number" id="mismatchScore" value="-1"
+                            class="mt-1 block w-full text-lg rounded-md border-gray-600 shadow-sm focus:border-blue-600 focus:ring-blue-600 p-3 bg-gray-700 text-gray-100">
+                    </div>
+                    <div>
+                        <label for="gapPenalty" class="block text-lg font-medium text-gray-200 mb-2">Gap Penalty</label>
+                        <input type="number" id="gapPenalty" value="-2"
+                            class="mt-1 block w-full text-lg rounded-md border-gray-600 shadow-sm focus:border-blue-600 focus:ring-blue-600 p-3 bg-gray-700 text-gray-100">
+                    </div>
+                </div>
+                <div>
+                    <label for="password1" class="block text-lg font-medium text-gray-200 mb-2">Primeira Senha</label>
+                    <input type="text" id="password1"
+                        class="mt-1 block w-full text-lg rounded-md border-gray-600 shadow-sm focus:border-blue-600 focus:ring-blue-600 p-3 bg-gray-700 text-gray-100">
+                </div>
+
+                <div>
+                    <label for="password2" class="block text-lg font-medium text-gray-200 mb-2">Segunda Senha</label>
+                    <input type="text" id="password2"
+                        class="mt-1 block w-full text-lg rounded-md border-gray-600 shadow-sm focus:border-blue-600 focus:ring-blue-600 p-3 bg-gray-700 text-gray-100">
+                </div>
+
+                <br>
+
+                <button id="analyzeBtn"
+                    class="w-full bg-gray-600 text-white py-5 px-6 rounded-md hover:bg-gray-700 transition-colors text-lg font-semibold">
+                    Analisar Similaridade
+                </button>
+            </div>
+
+            <div id="result" class="mt-14 p-6 rounded-md hidden bg-gray-700">
+                <h2 class="text-2xl font-semibold mb-8 text-gray-100">Resultado da Análise:</h2>
+                <div id="similarityScore" class="text-xl text-gray-200 mb-6"></div>
+                <div id="strengthAnalysis" class="mt-8 text-lg text-gray-200"></div>
+                <div id="matrix" class="mt-8 overflow-x-auto">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-100">Matriz de Alinhamento:</h3>
+                    <div id="matrixContent" class="font-mono text-gray-200"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

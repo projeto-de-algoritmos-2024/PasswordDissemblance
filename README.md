@@ -87,10 +87,9 @@ Você pode acessar a aplicação pelo seguinte link: [Password Dissemblance](htt
 
 ## Vídeos Explicando o Projeto
 
-<a href="LINK">
- <img src="IMAGEM" alt="Vídeo Apresentação Password Dissemblance" />
+<a href="https://youtu.be/kOfSdcB5aVo">
 </a>
 
-[Vídeo de Apresentação](LINK)
+[Vídeo de Apresentação](https://youtu.be/kOfSdcB5aVo)
 
 <br>
